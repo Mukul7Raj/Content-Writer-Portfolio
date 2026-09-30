@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Mail, MapPin, Code, PenTool, BookOpen, Search, Briefcase, FileText } from "lucide-react";
+import { Mail, MapPin, Code, PenTool, BookOpen, Search, Briefcase, FileText, Compass, Edit3 } from "lucide-react";
 
 export default function Portfolio() {
   const containerVariants = {
@@ -145,47 +145,96 @@ export default function Portfolio() {
             </div>
           </motion.section>
 
-          {/* Projects */}
+          {/* Featured Travel Writing Samples (Targeted for Holiday Tribe) */}
           <motion.section variants={itemVariants} className="space-y-8">
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 rounded-lg bg-pink-500/10 text-pink-400">
-                <Code size={24} />
+              <div className="p-3 rounded-lg bg-teal-500/10 text-teal-400">
+                <Compass size={24} />
               </div>
-              <h2 className="text-3xl font-bold font-[family-name:var(--font-heading)]">Selected Projects</h2>
+              <h2 className="text-3xl font-bold font-[family-name:var(--font-heading)]">Featured Projects & Articles</h2>
             </div>
+            <p className="text-gray-400 max-w-3xl mb-6 text-lg">Curated excerpts demonstrating structured itinerary planning, SEO best practices, and engaging storytelling—tailored specifically for high-growth travel-tech audiences.</p>
             
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Travel Blog & Destination Guide Series",
-                  tech: "WordPress, SEO",
-                  desc: "SEO-optimised destination guides and itineraries covering budget, culture, and offbeat experiences with targeted headings and meta descriptions.",
-                  link: "github.com/Mukul7Raj/travel-content-portfolio"
-                },
-                {
-                  title: "SEO Content Pipeline System",
-                  tech: "Python, Content Ops",
-                  desc: "Lightweight system to organise keyword research, cluster topics, and draft SEO-friendly article outlines with internal linking suggestions.",
-                  link: "github.com/Mukul7Raj/seo-content-pipeline"
-                },
-                {
-                  title: "Editorial Review Quality Harness",
-                  tech: "Python, Editing Workflows",
-                  desc: "Reusable checklist-driven harness to grade drafts for grammar, clarity, factual accuracy, and originality, standardising editorial quality.",
-                  link: "github.com/Mukul7Raj/content-quality-harness"
-                }
-              ].map((project, idx) => (
-                <div key={idx} className="glass-card p-6 rounded-2xl flex flex-col h-full group hover:-translate-y-2 transition-transform duration-300 cursor-pointer">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-accent transition-colors">{project.title}</h3>
-                    <p className="text-xs text-purple-400 font-mono">{project.tech}</p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Sample 1: Itinerary */}
+              <div className="glass-card p-6 rounded-2xl border-l-4 border-l-teal-500 group flex flex-col h-full">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">A 3-Day Budget Itinerary for Rishikesh</h3>
+                  <span className="text-xs px-2 py-1 bg-teal-500/20 text-teal-300 rounded-full font-medium whitespace-nowrap ml-2">Itinerary</span>
+                </div>
+                <p className="text-sm text-gray-300 mb-5 leading-relaxed flex-grow">
+                  <strong>Excerpt:</strong> "Planning a trip to the Yoga Capital of the World? This comprehensive 3-day budget itinerary covers everything from river rafting to spiritual Ganga Aartis..."
+                </p>
+                <div className="space-y-4 mt-auto pt-4 border-t border-gray-800/50">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-xs text-gray-400"><Search size={14} className="text-teal-400"/> <strong>Target Keyword:</strong> Rishikesh budget itinerary</div>
+                    <div className="flex items-center gap-2 text-xs text-gray-400"><Edit3 size={14} className="text-teal-400"/> <strong>SEO Action:</strong> Structured headings, actionable travel planning</div>
                   </div>
-                  <p className="text-sm text-gray-400 flex-1 mb-4">{project.desc}</p>
-                  <a href={`https://${project.link}`} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-300 flex items-center gap-2 hover:text-white mt-auto">
-                    <FileText size={16} /> View Project
+                  <a href="https://brokenbladez.substack.com/p/a-3-day-budget-itinerary-for-rishikesh" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full py-2 px-4 text-sm font-medium text-teal-400 bg-teal-500/10 rounded-lg hover:bg-teal-500/20 transition-colors">
+                    Read on Substack
                   </a>
                 </div>
-              ))}
+              </div>
+
+              {/* Sample 2: Destination Guide */}
+              <div className="glass-card p-6 rounded-2xl border-l-4 border-l-blue-500 group flex flex-col h-full">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Beyond the Beach: A First-Timer's Guide</h3>
+                  <span className="text-xs px-2 py-1 bg-blue-500/20 text-blue-300 rounded-full font-medium whitespace-nowrap ml-2">Destinations</span>
+                </div>
+                <p className="text-sm text-gray-300 mb-5 leading-relaxed flex-grow">
+                  <strong>Excerpt:</strong> "There is so much more to a coastal holiday than just lounging by the sea. This guide explores the hidden cultural spots, local cafes, and offbeat adventures..."
+                </p>
+                <div className="space-y-4 mt-auto pt-4 border-t border-gray-800/50">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-xs text-gray-400"><Search size={14} className="text-blue-400"/> <strong>Target Keyword:</strong> First timer's guide, offbeat travel</div>
+                    <div className="flex items-center gap-2 text-xs text-gray-400"><Edit3 size={14} className="text-blue-400"/> <strong>SEO Action:</strong> Engaging narrative, destination highlighting</div>
+                  </div>
+                  <a href="https://brokenbladez.substack.com/p/beyond-the-beach-a-first-timers-guide" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full py-2 px-4 text-sm font-medium text-blue-400 bg-blue-500/10 rounded-lg hover:bg-blue-500/20 transition-colors">
+                    Read on Substack
+                  </a>
+                </div>
+              </div>
+              
+              {/* Sample 3: Travel Tips */}
+              <div className="glass-card p-6 rounded-2xl border-l-4 border-l-purple-500 group flex flex-col h-full">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">10 Travel Mistakes I Made (So You Don't Have To)</h3>
+                  <span className="text-xs px-2 py-1 bg-purple-500/20 text-purple-300 rounded-full font-medium whitespace-nowrap ml-2">Travel Tips</span>
+                </div>
+                <p className="text-sm text-gray-300 mb-5 leading-relaxed flex-grow">
+                  <strong>Excerpt:</strong> "We all learn the hard way. From overpacking to ignoring local customs, here are 10 crucial travel mistakes I made on the road—and exactly how you can avoid them..."
+                </p>
+                <div className="space-y-4 mt-auto pt-4 border-t border-gray-800/50">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-xs text-gray-400"><Search size={14} className="text-purple-400"/> <strong>Target Keyword:</strong> Travel mistakes to avoid</div>
+                    <div className="flex items-center gap-2 text-xs text-gray-400"><Edit3 size={14} className="text-purple-400"/> <strong>Format:</strong> Highly engaging listicle, empathetic storytelling</div>
+                  </div>
+                  <a href="https://brokenbladez.substack.com/p/10-travel-mistakes-i-made-so-you" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full py-2 px-4 text-sm font-medium text-purple-400 bg-purple-500/10 rounded-lg hover:bg-purple-500/20 transition-colors">
+                    Read on Substack
+                  </a>
+                </div>
+              </div>
+
+              {/* Sample 4: Tech & Analytics */}
+              <div className="glass-card p-6 rounded-2xl border-l-4 border-l-orange-500 group flex flex-col h-full">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">Unveiling the Future of Data Analytics</h3>
+                  <span className="text-xs px-2 py-1 bg-orange-500/20 text-orange-300 rounded-full font-medium whitespace-nowrap ml-2">Tech Insights</span>
+                </div>
+                <p className="text-sm text-gray-300 mb-5 leading-relaxed flex-grow">
+                  <strong>Excerpt:</strong> "Data is the new oil, and analytics is the combustion engine. A deep dive into how data science is shaping the future of industries, written for a tech-savvy audience..."
+                </p>
+                <div className="space-y-4 mt-auto pt-4 border-t border-gray-800/50">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-xs text-gray-400"><Search size={14} className="text-orange-400"/> <strong>Skill Highlight:</strong> Technical Writing, Data Research</div>
+                    <div className="flex items-center gap-2 text-xs text-gray-400"><Edit3 size={14} className="text-orange-400"/> <strong>Outcome:</strong> Translating complex data topics into readable content</div>
+                  </div>
+                  <a href="https://brokenbladez.substack.com/p/unveiling-the-future-of-data-analytics" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full py-2 px-4 text-sm font-medium text-orange-400 bg-orange-500/10 rounded-lg hover:bg-orange-500/20 transition-colors">
+                    Read on Substack
+                  </a>
+                </div>
+              </div>
             </div>
           </motion.section>
 
